@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "rn-training",
-    "slug": "rn-training",
+    "name": "rn-first-app",
+    "slug": "rn-first-app",
     "platforms": [
       "ios",
       "android",

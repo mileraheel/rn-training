@@ -1,0 +1,3 @@
+always give width and height for network images.
+nested text controls - inherit styles of parent.
+when assigning height and width for list items - wrap list container inside a view and give dimensions there. - add flex:1 style because scrolling will not work in android.
