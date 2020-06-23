@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "rn-training",
-    "slug": "rn-training",
+    "name": "rn-complete-guide",
+    "slug": "rn-complete-guide",
     "platforms": [
       "ios",
       "android",
