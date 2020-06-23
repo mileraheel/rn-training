@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "rn-training",
-    "slug": "rn-training",
+    "name": "rn-number-guessing",
+    "slug": "rn-number-guessing",
     "platforms": [
       "ios",
       "android",
