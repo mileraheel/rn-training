@@ -2,14 +2,25 @@ import React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 import { CATEGORIES, MEALS } from '../data/dummy-data';
 import Colors from '../constants/Colors';
+import MealItem from '../components/MealItem';
 
 const CategoryMealScreen = props => {
 
     const renderMealItem = itemData => {
         return (
-            <View>
-                <Text>{itemData.item.title}</Text>
-            </View>
+            <MealItem title={itemData.item.title}
+                duration={itemData.item.duration}
+                complexity={itemData.item.complexity}
+                affordability={itemData.item.affordability}
+                image={itemData.item.imageUrl}
+                onSelectMeal={() => {
+                    props.navigation.navigate({
+                        routeName: 'MealDetail',
+                        params: {
+                            mealId: itemData.item.id
+                        }
+                    })
+                }} />
         );
     }
 
@@ -20,9 +31,9 @@ const CategoryMealScreen = props => {
     const selectedCategory = CATEGORIES.find(cat => cat.id === catId);
     return (
         <View style={styles.screen}>
-            <FlatList data={displayedMeals} 
-            keyExtractor={(item, index) => item.id}
-            renderItem={renderMealItem}>
+            <FlatList data={displayedMeals} style={{ width: '100%' }}
+                keyExtractor={(item, index) => item.id}
+                renderItem={renderMealItem}>
 
 
 
@@ -59,10 +70,10 @@ CategoryMealScreen.navigationOptions = navigationData => {
 
     return {
         headerTitle: selectedCategory.title
-       /*  headerStyle: {
-            backgroundColor: Platform.OS ==='android' ? Colors.primaryColor : 'white'
-        },
-        headerTintColor: Platform.OS ==='android' ? 'white' : Colors.primaryColor */
+        /*  headerStyle: {
+             backgroundColor: Platform.OS ==='android' ? Colors.primaryColor : 'white'
+         },
+         headerTintColor: Platform.OS ==='android' ? 'white' : Colors.primaryColor */
     };
 };
 const styles = StyleSheet.create({
